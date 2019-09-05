@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="İmyoStokTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bolum">
+    <Key>
+      <PropertyRef Name="Bolum_ID" />
+    </Key>
+    <Property Name="Bolum_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bolum_Adi" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="Kategori_ID" />
+    </Key>
+    <Property Name="Kategori_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kullanici_Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="Personel_ID" />
+    </Key>
+    <Property Name="Personel_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Unvan_ID" Type="int" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bolum_ID" Type="int" />
+    <Property Name="Sicil_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gorev" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tip">
+    <Key>
+      <PropertyRef Name="Urun_Tipi_ID" />
+    </Key>
+    <Property Name="Urun_Tipi_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Unvanlar">
+    <Key>
+      <PropertyRef Name="Unvan_ID" />
+    </Key>
+    <Property Name="Unvan_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Urun_Hareket">
+    <Key>
+      <PropertyRef Name="Hareket_ID" />
+    </Key>
+    <Property Name="Hareket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Urun_ID" Type="int" Nullable="false" />
+    <Property Name="Personel_ID" Type="int" />
+    <Property Name="Adet" Type="int" />
+    <Property Name="Cıkıs_Tarihi" Type="date" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barkod" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adet" Type="smallint" />
+    <Property Name="Tipi_ID" Type="int" />
+    <Property Name="Kategori_ID" Type="int" />
+    <Property Name="Giris_Tarihi" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'İmyoStokTakip.dbo.tb_Urun_Cıkıs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tb_Urun_Cıkıs">
+    <Key>
+      <PropertyRef Name="Hareket_ID" />
+    </Key>
+    <Property Name="Sicil_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Barkod" Type="nvarchar" MaxLength="50" />
+    <Property Name="Urun_adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adet" Type="int" />
+    <Property Name="Tip" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cıkıs_Tarihi" Type="date" />
+    <Property Name="Hareket_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'İmyoStokTakip.dbo.tb_Urun_Cıkıs1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <Association Name="FK_Personel_Bolum">
+    <End Role="Bolum" Type="Self.Bolum" Multiplicity="0..1" />
+    <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bolum">
+        <PropertyRef Name="Bolum_ID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="Bolum_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personel_Unvan">
+    <End Role="Unvanlar" Type="Self.Unvanlar" Multiplicity="0..1" />
+    <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unvanlar">
+        <PropertyRef Name="Unvan_ID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="Unvan_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_Hareket_Personel">
+    <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+    <End Role="Urun_Hareket" Type="Self.Urun_Hareket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personel">
+        <PropertyRef Name="Personel_ID" />
+      </Principal>
+      <Dependent Role="Urun_Hareket">
+        <PropertyRef Name="Personel_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_Hareket_Urunler">
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="1" />
+    <End Role="Urun_Hareket" Type="Self.Urun_Hareket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Urun_Hareket">
+        <PropertyRef Name="Urun_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Kategori">
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="Kategori_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="Kategori_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Tip">
+    <End Role="Tip" Type="Self.Tip" Multiplicity="0..1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tip">
+        <PropertyRef Name="Urun_Tipi_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="Tipi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="İmyoStokTakipModelStoreContainer">
+    <EntitySet Name="Bolum" EntityType="Self.Bolum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tip" EntityType="Self.Tip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unvanlar" EntityType="Self.Unvanlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urun_Hareket" EntityType="Self.Urun_Hareket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Urun_Cıkıs" EntityType="Self.tb_Urun_Cıkıs" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tb_Urun_Cıkıs].[Sicil_No] AS [Sicil_No], 
+[tb_Urun_Cıkıs].[Ad] AS [Ad], 
+[tb_Urun_Cıkıs].[Soyad] AS [Soyad], 
+[tb_Urun_Cıkıs].[Barkod] AS [Barkod], 
+[tb_Urun_Cıkıs].[Urun_adi] AS [Urun_adi], 
+[tb_Urun_Cıkıs].[Adet] AS [Adet], 
+[tb_Urun_Cıkıs].[Tip] AS [Tip], 
+[tb_Urun_Cıkıs].[Cıkıs_Tarihi] AS [Cıkıs_Tarihi], 
+[tb_Urun_Cıkıs].[Hareket_ID] AS [Hareket_ID]
+FROM [dbo].[tb_Urun_Cıkıs] AS [tb_Urun_Cıkıs]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Personel_Bolum" Association="Self.FK_Personel_Bolum">
+      <End Role="Bolum" EntitySet="Bolum" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personel_Unvan" Association="Self.FK_Personel_Unvan">
+      <End Role="Unvanlar" EntitySet="Unvanlar" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_Hareket_Personel" Association="Self.FK_Urun_Hareket_Personel">
+      <End Role="Personel" EntitySet="Personel" />
+      <End Role="Urun_Hareket" EntitySet="Urun_Hareket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_Hareket_Urunler" Association="Self.FK_Urun_Hareket_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Urun_Hareket" EntitySet="Urun_Hareket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Kategori" Association="Self.FK_Urunler_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Tip" Association="Self.FK_Urunler_Tip">
+      <End Role="Tip" EntitySet="Tip" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

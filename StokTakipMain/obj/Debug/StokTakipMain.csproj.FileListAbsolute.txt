@@ -1,0 +1,108 @@
+c:\users\administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe.config
+c:\users\administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe
+c:\users\administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.Cache
+c:\users\administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+c:\users\administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+C:\Users\Administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+C:\Users\Administrator\documents\visual studio 2013\Projects\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojResolveAssemblyReference.cache
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe.config
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.pdb
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.dll
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.xml
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojResolveAssemblyReference.cache
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+C:\Users\c-311\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe.config
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Hakkımızda.Hakkimizda.resources
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe.licenses
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.pdb
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojResolveAssemblyReference.cache
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojAssemblyReference.cache
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Hakkımızda.Hakkimizda.resources
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.cache
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe.licenses
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.CoreCompileInputs.cache
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+D:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+G:\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe.config
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Hakkımızda.Hakkimizda.resources
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.Cache
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe.licenses
+G:\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe
+G:\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.pdb
+G:\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.dll
+G:\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.xml
+G:\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe.config
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Hakkımızda.Hakkimizda.resources
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Sifre_degiştir.Sifre_Degistirme.resources
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe.licenses
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.pdb
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe.config
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.pdb
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Hakkımızda.Hakkimizda.resources
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Sifre_degiştir.Sifre_Degistirme.resources
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe.licenses
+C:\Users\Administrator\Desktop\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojResolveAssemblyReference.cache
+H:\emir\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe.config
+H:\emir\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.exe
+H:\emir\StokTakipMain\StokTakipMain\bin\Debug\StokTakipMain.pdb
+H:\emir\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.dll
+H:\emir\StokTakipMain\StokTakipMain\bin\Debug\EntityFramework.xml
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csprojResolveAssemblyReference.cache
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Hakkımızda.Hakkimizda.resources
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.main.resources
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Properties.Resources.resources
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.sifreleme.sifreleme_panel.resources
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Sifre_degiştir.Sifre_Degistirme.resources
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.csproj.GenerateResource.Cache
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe.licenses
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.exe
+H:\emir\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.pdb
+C:\Users\Administrator\Desktop\StokTakipMain\StokTakipMain\obj\Debug\StokTakipMain.Sifre_degiştir.Sifre_Degistirme.resources

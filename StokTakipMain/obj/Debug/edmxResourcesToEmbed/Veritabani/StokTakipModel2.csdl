@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="İmyoStokTakipModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bolum">
+    <Key>
+      <PropertyRef Name="Bolum_ID" />
+    </Key>
+    <Property Name="Bolum_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bolum_Adi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Bolum" FromRole="Bolum" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="Kategori_ID" />
+    </Key>
+    <Property Name="Kategori_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_Kategori" FromRole="Kategori" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici_Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="Personel_ID" />
+    </Key>
+    <Property Name="Personel_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Unvan_ID" Type="Int32" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bolum_ID" Type="Int32" />
+    <Property Name="Sicil_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bolum" Relationship="Self.FK_Personel_Bolum" FromRole="Personel" ToRole="Bolum" />
+    <NavigationProperty Name="Unvanlar" Relationship="Self.FK_Personel_Unvan" FromRole="Personel" ToRole="Unvanlar" />
+    <NavigationProperty Name="Urun_Hareket" Relationship="Self.FK_Urun_Hareket_Personel" FromRole="Personel" ToRole="Urun_Hareket" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tip">
+    <Key>
+      <PropertyRef Name="Urun_Tipi_ID" />
+    </Key>
+    <Property Name="Urun_Tipi_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_Tip" FromRole="Tip" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Unvanlar">
+    <Key>
+      <PropertyRef Name="Unvan_ID" />
+    </Key>
+    <Property Name="Unvan_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Unvan" FromRole="Unvanlar" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Urun_Hareket">
+    <Key>
+      <PropertyRef Name="Hareket_ID" />
+    </Key>
+    <Property Name="Hareket_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Urun_ID" Type="Int32" Nullable="false" />
+    <Property Name="Personel_ID" Type="Int32" />
+    <Property Name="Adet" Type="Int32" />
+    <Property Name="Cıkıs_Tarihi" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Personel" Relationship="Self.FK_Urun_Hareket_Personel" FromRole="Urun_Hareket" ToRole="Personel" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urun_Hareket_Urunler" FromRole="Urun_Hareket" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barkod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adet" Type="Int16" />
+    <Property Name="Tipi_ID" Type="Int32" />
+    <Property Name="Kategori_ID" Type="Int32" />
+    <Property Name="Giris_Tarihi" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Kategori" Relationship="Self.FK_Urunler_Kategori" FromRole="Urunler" ToRole="Kategori" />
+    <NavigationProperty Name="Tip" Relationship="Self.FK_Urunler_Tip" FromRole="Urunler" ToRole="Tip" />
+    <NavigationProperty Name="Urun_Hareket" Relationship="Self.FK_Urun_Hareket_Urunler" FromRole="Urunler" ToRole="Urun_Hareket" />
+  </EntityType>
+  <Association Name="FK_Personel_Bolum">
+    <End Role="Bolum" Type="Self.Bolum" Multiplicity="0..1" />
+    <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bolum">
+        <PropertyRef Name="Bolum_ID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="Bolum_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Kategori">
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="Kategori_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="Kategori_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personel_Unvan">
+    <End Role="Unvanlar" Type="Self.Unvanlar" Multiplicity="0..1" />
+    <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unvanlar">
+        <PropertyRef Name="Unvan_ID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="Unvan_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_Hareket_Personel">
+    <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+    <End Role="Urun_Hareket" Type="Self.Urun_Hareket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personel">
+        <PropertyRef Name="Personel_ID" />
+      </Principal>
+      <Dependent Role="Urun_Hareket">
+        <PropertyRef Name="Personel_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Tip">
+    <End Role="Tip" Type="Self.Tip" Multiplicity="0..1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tip">
+        <PropertyRef Name="Urun_Tipi_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="Tipi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_Hareket_Urunler">
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="1" />
+    <End Role="Urun_Hareket" Type="Self.Urun_Hareket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Urun_Hareket">
+        <PropertyRef Name="Urun_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="İmyoStokTakipEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bolum" EntityType="Self.Bolum" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tip" EntityType="Self.Tip" />
+    <EntitySet Name="Unvanlar" EntityType="Self.Unvanlar" />
+    <EntitySet Name="Urun_Hareket" EntityType="Self.Urun_Hareket" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+    <AssociationSet Name="FK_Personel_Bolum" Association="Self.FK_Personel_Bolum">
+      <End Role="Bolum" EntitySet="Bolum" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Kategori" Association="Self.FK_Urunler_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personel_Unvan" Association="Self.FK_Personel_Unvan">
+      <End Role="Unvanlar" EntitySet="Unvanlar" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_Hareket_Personel" Association="Self.FK_Urun_Hareket_Personel">
+      <End Role="Personel" EntitySet="Personel" />
+      <End Role="Urun_Hareket" EntitySet="Urun_Hareket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Tip" Association="Self.FK_Urunler_Tip">
+      <End Role="Tip" EntitySet="Tip" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_Hareket_Urunler" Association="Self.FK_Urun_Hareket_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Urun_Hareket" EntitySet="Urun_Hareket" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

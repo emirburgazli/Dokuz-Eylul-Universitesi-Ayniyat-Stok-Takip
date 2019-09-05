@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f47c6e0d8c914d18889c4409104ec4a8" Name="Diagram1">
+        <EntityTypeShape EntityType="StokTakipModel.Bolum" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StokTakipModel.Kategori" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StokTakipModel.Personel" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="StokTakipModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StokTakipModel.Tip" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StokTakipModel.Urun_Hareket" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StokTakipModel.Urunler" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="StokTakipModel.FK_Personel_Bolum" ManuallyRouted="false" />
+        <AssociationConnector Association="StokTakipModel.FK_Urunler_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="StokTakipModel.FK_Urun_Hareket_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="StokTakipModel.FK_Urunler_Tip" ManuallyRouted="false" />
+        <AssociationConnector Association="StokTakipModel.FK_Urun_Hareket_Urunler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

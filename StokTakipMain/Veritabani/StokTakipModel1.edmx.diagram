@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b875a2a9e994e8aba47050b49753a7f" Name="Diagram1" ZoomLevel="82" DisplayType="true">
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Bolum" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Kategori" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Kullanici" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Personel" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Tip" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Unvanlar" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Urun_Hareket" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.Urunler" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="İmyoStokTakipModel.FK_Personel_Bolum" ManuallyRouted="false" />
+        <AssociationConnector Association="İmyoStokTakipModel.FK_Urunler_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="İmyoStokTakipModel.FK_Personel_Unvan" ManuallyRouted="false" />
+        <AssociationConnector Association="İmyoStokTakipModel.FK_Urun_Hareket_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="İmyoStokTakipModel.FK_Urunler_Tip" ManuallyRouted="false" />
+        <AssociationConnector Association="İmyoStokTakipModel.FK_Urun_Hareket_Urunler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="İmyoStokTakipModel.tb_Urun_Cıkıs" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

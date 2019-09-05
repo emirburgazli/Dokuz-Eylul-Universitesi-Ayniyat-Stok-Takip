@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E219CC70-82C6-4AFF-A094-DB345C21AA61}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StokTakipMain</RootNamespace>
+    <AssemblyName>StokTakipMain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Hakkımızda\Hakkimizda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hakkımızda\Hakkimizda.Designer.cs">
+      <DependentUpon>Hakkimizda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="giris_sifre\sifreleme_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="giris_sifre\sifreleme_panel.Designer.cs">
+      <DependentUpon>sifreleme_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sifre degiştir\Sifre_Degistirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sifre degiştir\Sifre_Degistirme.Designer.cs">
+      <DependentUpon>Sifre_Degistirme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Bolum.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Kategori.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Kullanici.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Personel.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\StokTakipModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StokTakipModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\StokTakipModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\StokTakipModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StokTakipModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\sysdiagrams.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\tb_Urun_Cıkıs.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Tip.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Unvanlar.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Urunler.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Veritabani\Urun_Hareket.cs">
+      <DependentUpon>StokTakipModel1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Hakkımızda\Hakkimizda.resx">
+      <DependentUpon>Hakkimizda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="giris_sifre\sifreleme_panel.resx">
+      <DependentUpon>sifreleme_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sifre degiştir\Sifre_Degistirme.resx">
+      <DependentUpon>Sifre_Degistirme.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\DataSet1.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Guncelle.datasource" />
+    <None Include="Properties\DataSources\Personel_ekle.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.Depo_Detay.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.Kategori.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.Personel.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.StokTakipEntities.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.sysdiagrams.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.Tip.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.Urunler.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Data.Urun_Barkod.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\StokTakipMain.Properties.Settings.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="Veritabani\StokTakipModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StokTakipModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Veritabani\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Veritabani\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Veritabani\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="Veritabani\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Include="Veritabani\StokTakipModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StokTakipModel1.edmx</DependentUpon>
+      <LastGenOutput>StokTakipModel1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Veritabani\StokTakipModel1.edmx.diagram">
+      <DependentUpon>StokTakipModel1.edmx</DependentUpon>
+    </None>
+    <None Include="Veritabani\StokTakipModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StokTakipModel1.edmx</DependentUpon>
+      <LastGenOutput>StokTakipModel1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guncelle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barkod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tip_ekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kategori_ekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun_ekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kabul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iptal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p_ekle_resmi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bakım.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kategori1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kategori11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barkod1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barkod11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tip_ekle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cikis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barkod2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tip2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uruncıkıs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun_ekle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2019-03-27 at 10.06.52.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2019-03-27 at 10.09.42.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cıkıskagıdı.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

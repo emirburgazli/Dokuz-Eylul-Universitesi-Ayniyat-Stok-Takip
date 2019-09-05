@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StokTakipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bolum">
+    <Key>
+      <PropertyRef Name="Bolum_ID" />
+    </Key>
+    <Property Name="Bolum_ID" Type="Byte" Nullable="false" />
+    <Property Name="Bolum_Adi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Bolum" FromRole="Bolum" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="Kategori_ID" />
+    </Key>
+    <Property Name="Kategori_ID" Type="Int32" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_Kategori" FromRole="Kategori" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="Personel_ID" />
+    </Key>
+    <Property Name="Personel_ID" Type="Int32" Nullable="false" />
+    <Property Name="Unvan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bolum_ID" Type="Byte" />
+    <NavigationProperty Name="Bolum" Relationship="Self.FK_Personel_Bolum" FromRole="Personel" ToRole="Bolum" />
+    <NavigationProperty Name="Depo_Detay" Relationship="Self.FK_Depo_Detay_Personel" FromRole="Personel" ToRole="Depo_Detay" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tip">
+    <Key>
+      <PropertyRef Name="Urun_Tipi_ID" />
+    </Key>
+    <Property Name="Urun_Tipi_ID" Type="Int32" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_Tip" FromRole="Tip" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Urun_Barkod">
+    <Key>
+      <PropertyRef Name="Barkod_ID" />
+    </Key>
+    <Property Name="Barkod_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Urun_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_Urun_Barkod" FromRole="Urun_Barkod" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="Barkod_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adet" Type="Int16" />
+    <Property Name="Giris_Tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Urun_Tipi_ID" Type="Int32" />
+    <Property Name="Kategori_ID" Type="Int32" />
+    <NavigationProperty Name="Kategori" Relationship="Self.FK_Urunler_Kategori" FromRole="Urunler" ToRole="Kategori" />
+    <NavigationProperty Name="Tip" Relationship="Self.FK_Urunler_Tip" FromRole="Urunler" ToRole="Tip" />
+    <NavigationProperty Name="Urun_Barkod" Relationship="Self.FK_Urunler_Urun_Barkod" FromRole="Urunler" ToRole="Urun_Barkod" />
+    <NavigationProperty Name="Depo_Detay" Relationship="Self.FK_Depo_Detay_Urunler" FromRole="Urunler" ToRole="Depo_Detay" />
+  </EntityType>
+  <EntityType Name="Depo_Detay">
+    <Key>
+      <PropertyRef Name="Urun_ID" />
+      <PropertyRef Name="Personel_ID" />
+      <PropertyRef Name="Adet" />
+      <PropertyRef Name="Cıkıs_Tarihi" />
+    </Key>
+    <Property Name="Urun_ID" Type="Int32" Nullable="false" />
+    <Property Name="Personel_ID" Type="Int32" Nullable="false" />
+    <Property Name="Adet" Type="Int16" Nullable="false" />
+    <Property Name="Cıkıs_Tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Personel" Relationship="Self.FK_Depo_Detay_Personel" FromRole="Depo_Detay" ToRole="Personel" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Depo_Detay_Urunler" FromRole="Depo_Detay" ToRole="Urunler" />
+  </EntityType>
+  <Association Name="FK_Personel_Bolum">
+    <End Role="Bolum" Type="Self.Bolum" Multiplicity="0..1" />
+    <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bolum">
+        <PropertyRef Name="Bolum_ID" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="Bolum_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Kategori">
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="Kategori_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="Kategori_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Depo_Detay_Personel">
+    <End Role="Personel" Type="Self.Personel" Multiplicity="1" />
+    <End Role="Depo_Detay" Type="Self.Depo_Detay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personel">
+        <PropertyRef Name="Personel_ID" />
+      </Principal>
+      <Dependent Role="Depo_Detay">
+        <PropertyRef Name="Personel_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Tip">
+    <End Role="Tip" Type="Self.Tip" Multiplicity="0..1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tip">
+        <PropertyRef Name="Urun_Tipi_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="Urun_Tipi_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Urun_Barkod">
+    <End Role="Urun_Barkod" Type="Self.Urun_Barkod" Multiplicity="1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urun_Barkod">
+        <PropertyRef Name="Barkod_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="Barkod_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Depo_Detay_Urunler">
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="1" />
+    <End Role="Depo_Detay" Type="Self.Depo_Detay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Depo_Detay">
+        <PropertyRef Name="Urun_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StokTakipEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bolum" EntityType="Self.Bolum" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="Personel" EntityType="Self.Personel" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tip" EntityType="Self.Tip" />
+    <EntitySet Name="Urun_Barkod" EntityType="Self.Urun_Barkod" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+    <EntitySet Name="Depo_Detay" EntityType="Self.Depo_Detay" />
+    <AssociationSet Name="FK_Personel_Bolum" Association="Self.FK_Personel_Bolum">
+      <End Role="Bolum" EntitySet="Bolum" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Kategori" Association="Self.FK_Urunler_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Depo_Detay_Personel" Association="Self.FK_Depo_Detay_Personel">
+      <End Role="Personel" EntitySet="Personel" />
+      <End Role="Depo_Detay" EntitySet="Depo_Detay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Tip" Association="Self.FK_Urunler_Tip">
+      <End Role="Tip" EntitySet="Tip" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Urun_Barkod" Association="Self.FK_Urunler_Urun_Barkod">
+      <End Role="Urun_Barkod" EntitySet="Urun_Barkod" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Depo_Detay_Urunler" Association="Self.FK_Depo_Detay_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Depo_Detay" EntitySet="Depo_Detay" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
